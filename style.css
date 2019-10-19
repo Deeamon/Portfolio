@@ -1,0 +1,322 @@
+@font-face{
+  font-family: 'Mittelschrift';
+  src: url("assets/font/DIN\ Mittelschrift\ Mittelschrift.ttf") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.portfolio__container{
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+.portfolio__header{
+  display: flex;
+  align-items: center; 
+
+  font-family: 'Mittelschrift';
+  font-size: 1.2rem;
+  padding: 1.8em 0;
+
+  border-bottom: 5px solid black;
+}
+
+.header__info{
+  margin-left: 1.3em;
+  display: flex;
+  flex-direction: column;
+}
+
+.info__name{
+  font-size: 2rem;
+  padding: 0.4em 0 0.6em;
+  margin: 0;
+}
+
+.info__link{
+  font-family: 'Mittelschrift';
+  font-size: 1.2rem;
+  color: black;
+  text-decoration: none;
+  margin-bottom: 1em;
+}
+
+.info__link:last-child{
+  margin-bottom: 0;
+}
+
+/*accordion*/
+.accordion__item{
+  /* border: 3px solid black; */
+}
+
+.accordion__item.active .accordion__content{
+  display: block;
+}
+
+.accordion__item.active .accordion__header::after{
+  transform: translateY(-50%) rotate(-45deg);
+  margin-top: 5px;
+}
+
+.accordion__header{
+  font-family: 'Mittelschrift';
+  font-size: 1.5rem;
+
+  padding: 0.8em 0;
+  position: relative;
+
+  cursor: pointer;
+  border-bottom: 3px solid black;
+}
+
+.accordion__header::after{
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  z-index: 1;
+
+  transform: translateY(-50%) rotate(135deg);
+}
+
+.accordion__content{
+  font-family: 'Mittelschrift';
+  color: black;
+  padding-bottom: 3.4em;
+  display: none;
+
+  border-bottom: 5px solid black;
+}
+
+.content__list{
+  font-family: 'Mittelschrift';
+  font-size: 1.3rem;
+  color: black;
+  padding: 0 0 0 2.5em;
+  margin: 0;
+  list-style: none;
+}
+
+.list__item{
+  margin: 0.8em 0;
+}
+
+.list__item:last-child{
+  margin: 0;
+}
+
+.project__title{
+  font-family: 'Mittelschrift';
+  font-size: 1.5rem;
+  padding: 0.8em 0;
+  
+}
+/*Project*/
+.project__slider{
+  position: relative;
+  width: 100%;
+  height: 30vh;
+}
+
+.project-name{
+  font-family: 'Mittelschrift';
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.name__title{  
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.name__description{
+  font-size: 1rem;
+  text-align: start;
+}
+
+.list__item{
+  margin: 0.2em 0;
+}
+
+.name__banner{
+  font-size: 1rem;
+  border: 1px solid black;
+}
+
+.prev-img{
+  width: 100%;
+}
+
+/*Carousel*/
+.carousel{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+
+  border: 3px solid black;
+  overflow: hidden;
+}
+
+.items-container{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.item{
+  display: none;
+  position: relative;
+  margin: 0 auto;
+  animation: 0.5s ease-in-out;
+}
+
+.active,
+.next{
+  display: block;
+}
+
+.next{
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.description{
+  margin: 3% 15%;
+  font-size: 32px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+}
+
+.project-name{
+  padding: 10px;
+}
+
+.control{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10%;
+  cursor: pointer;
+}
+
+.control.left{
+  left: 0;
+  right: auto;
+}
+
+.control.right{
+  right: 0;
+  left: auto;
+}
+
+.arrow{
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* font-size: 84px; */
+
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 25px 25px 25px 0;
+  border-color: transparent rgba(0, 0, 0, 0.5) transparent transparent;
+  
+}
+
+.arrow.right{
+  right: 50%;
+
+  border-width: 25px 0 25px 25px;
+  border-color: transparent transparent transparent rgba(0, 0, 0, 0.5);
+}
+
+.to-left{
+  animation-name: left;
+}
+
+.to-right{
+  animation-name: right;
+  animation-direction: reverse;  
+}
+
+.from-left{
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+.from-right{
+  animation-name: right;
+}
+
+@keyframes left{
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes right{
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@media (max-width: 960px){
+  .description{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 640px){
+  .arrow{
+    display: none;
+  }
+
+  .project-name{
+    display: none;
+  }
+
+  .description{
+    border: 0;
+  }
+}
+
+/* 
+.description img{
+  display: block;
+  width: 50%;
+  height: auto;
+} */
+
+.prev-img{
+  display: block;
+  width: 50%;
+  height: auto;
+}
+
+.prev-img img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
