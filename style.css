@@ -263,6 +263,10 @@
   animation-name: right;
 }
 
+.info{
+  display: none;
+}
+
 @keyframes left{
   from {
     left: 0;
@@ -282,23 +286,44 @@
 }
 
 @media (max-width: 960px){
+  
+  .project__slider {
+    height: 50vh;
+  }
+
   .description{
     flex-direction: column;
     align-items: center;
   }
+
+  .info{
+    display: none;
+  }
 }
 
 @media (max-width: 640px){
+  .project__slider {
+    height: 53vh;
+  }
+
   .arrow{
     display: none;
   }
 
-  .project-name{
+  /* .project-name{
     display: none;
-  }
+  } */
 
   .description{
     border: 0;
+  }
+
+  .name__banner{
+    display: none;
+  }
+
+  .info{
+    display: block;
   }
 }
 
