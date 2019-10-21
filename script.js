@@ -2,6 +2,15 @@ document.querySelector('.accordion__item').addEventListener('click', function(){
   this.classList.toggle('active');
 });
 
+let showDesc = document.querySelectorAll('.project-name');
+
+[].forEach.call(showDesc, function(el){
+  el.addEventListener('click', function () {
+    showDesc.forEach(i => { i.classList.toggle('active'); });
+  });
+});
+
+
 let items = document.querySelectorAll('.carousel .item');
 let currentItem = 0;
 let isEnabled = true;
